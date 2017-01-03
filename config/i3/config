@@ -190,6 +190,6 @@ smart_gaps on
 # Turn on compton
 exec --no-startup-id compton
 # Set wallpaper
-exec --no-startup-id sh ~/.fehbg &
+exec_always sh ~/.fehbg &
 # Turn of HDMI monitor
 exec xrandr --output HDMI-0 --off
