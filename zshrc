@@ -1,0 +1,32 @@
+source $HOME/.zsh/completion
+source $HOME/.zsh/keybindings
+source $HOME/.zsh/functions
+source $HOME/.zsh/aliases
+source $HOME/.zsh_prompt
+
+# Save a ton of history
+HISTSIZE=20000
+HISTFILE=~/.zsh_history
+SAVEHIST=20000
+
+# PATH
+export PATH="$HOME/.bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/usr/local/share/npm/bin:$PATH"
+export PATH="$HOME/Library/Haskell/bin:$PATH"
+export PATH="/Applications/Android/sdk/platform-tools:$PATH"
+export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+eval "$(rbenv init -)"
+export PATH="./bin:$PATH"
+
+# editor
+export EDITOR=/usr/local/bin/nvim
+
+# cd
+export CDPATH="$CDPATH:$HOME:$HOME/code"
+setopt auto_cd
+
+# Avoid issues in tmux
+export LC_CTYPE="UTF-8"

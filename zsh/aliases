@@ -1,0 +1,26 @@
+alias vim=nvim
+alias git=hub
+alias g=git
+alias gp="git push"
+alias gl="git pull"
+alias gch="git checkout HEAD"
+alias grbi="git rebase -i"
+alias hdiff="git diff HEAD"
+
+alias h=heroku
+alias heroku="nocorrect heroku"
+alias serve="ruby -run -e httpd . -p 5000"
+alias v=vim
+alias vl=vim_line
+alias x=exit
+alias e=exit
+
+alias psg="ps aux | grep"
+
+alias bi="brew install"
+alias bu="brew uninstall"
+
+alias grepf="grep -r -n --color=auto"
+
+alias migrate="rake db:migrate; rake db:migrate RAILS_ENV=test"
+alias grepr="bundle exec rake routes | grep"
