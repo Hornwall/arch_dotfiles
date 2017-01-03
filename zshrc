@@ -22,11 +22,16 @@ eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
 
 # editor
-export EDITOR=/usr/local/bin/nvim
+export EDITOR=/usr/bin/nvim
 
 # cd
 export CDPATH="$CDPATH:$HOME:$HOME/code"
 setopt auto_cd
 
 # Avoid issues in tmux
-export LC_CTYPE="UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+#scale
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+export QT_DEVICE_PIXEL_RATIO=2
