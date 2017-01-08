@@ -1,0 +1,29 @@
+[push]
+  default = upstream
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+
+[user]
+  name = Hannes Hornwall
+  email = hannes@hornwall.me
+
+[merge]
+  defaultToUpstream = true
+
+[alias]
+  ci = commit
+  st = status -sb
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ctags = !.git/hooks/ctags
+
+[github]
+  user = hornwall
+
+[init]
+  templatedir = ~/.git_template
+
+[pull]
+  rebase = true
