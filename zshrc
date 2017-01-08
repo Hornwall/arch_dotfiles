@@ -18,8 +18,14 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/Applications/Android/sdk/platform-tools:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
-eval "$(rbenv init -)"
 export PATH="./bin:$PATH"
+
+
+#rbenv
+eval "$(rbenv init -)"
+
+#keychain
+eval $(keychain --eval --quiet id_rsa)
 
 # editor
 export EDITOR=/usr/bin/nvim
