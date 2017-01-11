@@ -1,16 +1,19 @@
 Rxvt*font:       xft:Monospace:size=10:antialias=true
 
-URxvt*tintColor: White
-URxvt*shading:   25
-URxvt*scrollBar: false
+URxvt*scrollBar:   false
+URxvt.perl-ext-common: selection-to-clipboard,clipboard
+
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
 
 ! special
+urxvt*depth: 32
+urxvt*background: rgba:1600/1700/1900/F200
 *.foreground:   #b7bcba
-*.background:   #161719
 *.cursorColor:  #b7bcba
 
 ! black
-*.color0:       #1e1f22
+*.color0:       rgba:1E00/1F00/2200/F200
 *.color8:       #161719
 
 ! red

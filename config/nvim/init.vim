@@ -101,7 +101,7 @@ set statusline+=\         " Space
 set statusline+=[%{fugitive#head(7)}]
 
 set noesckeys
-set clipboard=unnamed
+set clipboard=unnamedplus
 set backspace=indent,eol,start
 
 " Colors
