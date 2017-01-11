@@ -1,5 +1,5 @@
 [options]
-font = Monospace 18
+font = Monospace 9
 
 [colors]
 
@@ -40,3 +40,6 @@ color14 = #68b5ab
 # white
 color7  = #5c656e
 color15 = #b7bcba
+
+
+URxvt.font: Monospace:size=9
