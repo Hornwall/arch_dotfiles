@@ -41,6 +41,17 @@ bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
+#
+#change keyboard layout
+set $keyboardMode "keyboard s=se, e=us"
+bindsym $mod+Shift+i mode $keyboardMode
+mode $keyboardMode {
+    bindsym s exec "setxkbmap se", mode "default"
+    bindsym e exec "setxkbmap us", mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
