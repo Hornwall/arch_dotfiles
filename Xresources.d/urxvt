@@ -1,4 +1,4 @@
-Rxvt*font:       xft:Monospace:size=10:antialias=true
+Rxvt*font:       xft:Monospace:size=10:antialias=true, xft:FontAwesome:size=10:antialias=true
 
 URxvt*scrollBar:   false
 URxvt.perl-ext-common: selection-to-clipboard,clipboard
