@@ -25,7 +25,7 @@ export PATH="./bin:$PATH"
 eval "$(rbenv init -)"
 
 #keychain
-eval $(keychain --eval --quiet id_rsa)
+eval $(keychain --eval --quiet --noask id_rsa)
 
 # editor
 export EDITOR=/usr/bin/nvim

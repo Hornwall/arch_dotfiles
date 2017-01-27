@@ -31,7 +31,7 @@ set $down j
 set $left h
 set $right l
 
-set $mod Mod4
+set $mod Mod1
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -87,10 +87,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+Mod1+Shift+$left move workspace to output left
-bindsym $mod+Mod1+Shift+$up move workspace to output up
-bindsym $mod+Mod1+Shift+$down move workspace to output down
-bindsym $mod+Mod1+Shift+$right move workspace to output right
+bindsym $mod+Mod4+Shift+$left move workspace to output left
+bindsym $mod+Mod4+Shift+$up move workspace to output up
+bindsym $mod+Mod4+Shift+$down move workspace to output down
+bindsym $mod+Mod4+Shift+$right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+x split h
@@ -243,6 +243,12 @@ bar {
 bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+ unmute
 bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%- unmute
 bindsym XF86AudioMute exec amixer set 'Master' toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # No title bars
 new_window none
