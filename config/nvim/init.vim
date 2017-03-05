@@ -61,6 +61,7 @@ Bundle "derekwyatt/vim-scala"
 Bundle "szw/vim-g"
 Bundle "radenling/vim-dispatch-neovim"
 Bundle "elmcast/elm-vim"
+Bundle "rust-lang/rust.vim"
 
 
 Bundle "tpope/vim-fugitive"
@@ -205,6 +206,7 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.rs set filetype=rust
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
