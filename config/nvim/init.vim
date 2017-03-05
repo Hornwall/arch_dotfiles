@@ -179,6 +179,11 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" Fix nvim split switching in tmux
+if has('nvim')
+  nmap <bs> :<c-u>TmuxNavigateLeft<cr>
+endif
+
 augroup vimrcEx
   autocmd!
 
