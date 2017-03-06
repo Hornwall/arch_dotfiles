@@ -39,6 +39,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 
+#start browser
+bindsym $mod+Shift+b exec chromium
+
 # kill focused window
 bindsym $mod+Shift+q kill
 #
@@ -49,6 +52,18 @@ mode $keyboardMode {
     bindsym s exec "setxkbmap se", mode "default"
     bindsym e exec "setxkbmap us", mode "default"
     # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+#change screen config
+set $screenMode "Screen w=work, p=portable, f=förvaltning"
+bindsym $mod+Shift+s mode $screenMode
+mode $screenMode {
+    bindsym w exec "~/.screenlayout/work.sh", restart, mode "default"
+    bindsym p exec "~/.screenlayout/portable.sh", restart, mode "default"
+    bindsym f exec "~/.screenlayout/forvalt.sh", restart, mode "default"
+
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -164,6 +179,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace_10
 # App-specific workspaces
 assign [class="URxvt"] $workspace_1
 assign [class="Google-chrome"] $workspace_2
+assign [class="Chromium"] $workspace_2
 assign [class="Slack"] $workspace_3
 for_window [class="Spotify"] move to workspace $workspace_4
 
@@ -259,7 +275,7 @@ gaps inner 8
 smart_gaps on
 
 # Turn on compton
-exec --no-startup-id compton
+exec --no-startup-id compton --opengl --vsync opengl-swc --paint-on-overlay
 exec 1pass
 # Set wallpaper
 exec_always sh ~/.fehbg &
