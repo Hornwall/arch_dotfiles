@@ -22,7 +22,7 @@ export PATH="./bin:$PATH"
 
 
 #rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 #keychain
 eval $(keychain --eval --quiet --noask id_rsa)
@@ -31,7 +31,7 @@ eval $(keychain --eval --quiet --noask id_rsa)
 export EDITOR=/usr/bin/nvim
 
 # cd
-export CDPATH="$CDPATH:$HOME:$HOME/code"
+export CDPATH="$CDPATH:$HOME:$HOME/Code:$HOME/.config"
 setopt auto_cd
 
 # Avoid issues in tmux
@@ -41,3 +41,7 @@ export LC_ALL="en_US.UTF-8"
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
