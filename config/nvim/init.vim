@@ -87,6 +87,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 
+function! ClipboardYank()
+  call system('xclip -i -selection clipboard', @@)
+endfunction
+
+function! ClipboardPaste()
+  let @@ = system('xclip -o -selection clipboard')
+endfunction
+
+vnoremap <silent> y y:call ClipboardYank()<cr>
+vnoremap <silent> d d:call ClipboardYank()<cr>
+nnoremap <silent> p :call ClipboardPaste()<cr>p
+
 call vundle#end()
 filetype plugin indent on
 
@@ -101,8 +113,7 @@ set statusline+=%L        " Total lines
 set statusline+=\         " Space
 set statusline+=[%{fugitive#head(7)}]
 
-set noesckeys
-set clipboard=unnamedplus
+set clipboard=unnamed
 set backspace=indent,eol,start
 
 " Colors
