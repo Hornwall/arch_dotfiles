@@ -22,7 +22,7 @@ export PATH="./bin:$PATH"
 
 
 #rbenv
-#eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 #keychain
 eval $(keychain --eval --quiet --noask id_rsa)
