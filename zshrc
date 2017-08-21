@@ -2,6 +2,7 @@ source $HOME/.zsh/completion
 source $HOME/.zsh/keybindings
 source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
+source $HOME/.zsh/work_aliases
 source $HOME/.zsh_prompt
 
 # Save a ton of history
@@ -16,10 +17,9 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/Applications/Android/sdk/platform-tools:$PATH"
+export PATH="~/.rbenv/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
-export PATH="./bin:$PATH"
-
 
 #rbenv
 eval "$(rbenv init -)"
@@ -31,7 +31,7 @@ eval $(keychain --eval --quiet --noask id_rsa)
 export EDITOR=/usr/bin/nvim
 
 # cd
-export CDPATH="$CDPATH:$HOME:$HOME/Code:$HOME/.config"
+export CDPATH="$CDPATH:$HOME:$HOME/code:$HOME/.config"
 setopt auto_cd
 
 # Avoid issues in tmux
@@ -43,5 +43,5 @@ export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#export PATH="$PATH:$HOME/.rvm/bin"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

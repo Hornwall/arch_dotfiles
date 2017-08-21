@@ -18,6 +18,8 @@ set lazyredraw
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
+runtime macros/matchit.vim
+
 " Let Vundle manage Vundle
 Bundle "gmarik/Vundle.vim"
 
@@ -62,7 +64,14 @@ Bundle "szw/vim-g"
 Bundle "radenling/vim-dispatch-neovim"
 Bundle "elmcast/elm-vim"
 Bundle "rust-lang/rust.vim"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "kana/vim-textobj-user"
+Bundle 'editorconfig/editorconfig-vim'
 
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
 
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
@@ -206,6 +215,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.rs set filetype=rust
+  autocmd BufRead,BufNewFile *.coffee set filetype=coffee
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell

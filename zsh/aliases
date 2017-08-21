@@ -24,3 +24,11 @@ alias grepf="grep -r -n --color=auto"
 
 alias migrate="rake db:migrate; rake db:migrate RAILS_ENV=test"
 alias grepr="bundle exec rake routes | grep"
+
+alias pbcopy='xclip'
+alias pbpaste='xclip -o'
+
+
+alias old_ruby_install="cat ~/ruby2.x-openssl.patch | PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install -p"
+alias sold_ruby_install="PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install"
+
