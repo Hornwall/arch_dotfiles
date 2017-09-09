@@ -21,11 +21,10 @@ export PATH="~/.rbenv/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 
+export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
+
 #rbenv
 eval "$(rbenv init -)"
-
-#keychain
-eval $(keychain --eval --quiet --noask id_rsa)
 
 # editor
 export EDITOR=/usr/bin/nvim
