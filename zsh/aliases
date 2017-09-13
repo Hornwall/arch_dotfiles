@@ -5,6 +5,7 @@ alias gp="git push"
 alias gl="git pull"
 alias gch="git checkout HEAD"
 alias grbi="git rebase -i"
+alias gco="git checkout"
 alias hdiff="git diff HEAD"
 
 alias h=heroku
@@ -29,6 +30,6 @@ alias pbcopy='xclip'
 alias pbpaste='xclip -o'
 
 
-alias old_ruby_install="cat ~/ruby2.x-openssl.patch | PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install -p"
-alias sold_ruby_install="PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install"
+alias old_ruby_install="cat ~/ruby2.x-openssl.patch | CC=/usr/bin/gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install -p"
+alias sold_ruby_install="CC=/usr/bin/gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install"
 

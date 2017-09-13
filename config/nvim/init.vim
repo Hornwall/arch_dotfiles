@@ -67,6 +67,7 @@ Bundle "rust-lang/rust.vim"
 Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "kana/vim-textobj-user"
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'ngmy/vim-rubocop'
 
 set nocompatible
 if has("autocmd")

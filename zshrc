@@ -20,6 +20,7 @@ export PATH="/Applications/Android/sdk/platform-tools:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
+export APOEX_EMAIL="hannes.hornwall@apoex.se"
 
 export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
 
