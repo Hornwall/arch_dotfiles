@@ -41,11 +41,11 @@ Bundle "tpope/vim-rails"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-rake"
-Bundle "tpope/vim-vinegar"
 Bundle "tpope/vim-commentary"
 Bundle "tpope/vim-dispatch"
 Bundle "tpope/vim-rhubarb"
 Bundle "tpope/vim-projectionist"
+Bundle "tpope/vim-vinegar"
 Bundle "vim-scripts/matchit.zip"
 Bundle "vim-scripts/ctags.vim"
 Bundle "vim-scripts/greplace.vim"
@@ -68,6 +68,7 @@ Bundle "nelstrom/vim-textobj-rubyblock"
 Bundle "kana/vim-textobj-user"
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ngmy/vim-rubocop'
+Bundle 'jelera/vim-javascript-syntax'
 
 set nocompatible
 if has("autocmd")
@@ -182,12 +183,17 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+nmap <Leader>a, :Tabularize /,\zs<CR>
+vmap <Leader>a, :Tabularize /,\zs<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
+
+nmap <Tab><Tab> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrows=0
 
 " Fix nvim split switching in tmux
 if has('nvim')
@@ -209,8 +215,8 @@ augroup vimrcEx
     \ endif
 
   " Cucumber navigation commands
-  autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
+  " autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
+  " autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
 
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby

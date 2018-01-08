@@ -2,4 +2,9 @@ autoload colors; colors;
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 setopt prompt_subst
 
+_git_branch_name() {
+  git rev-parse --abbrev-ref HEAD 2> /dev/null
+}
+
 PROMPT='%{$fg[cyan]%}%~ $ %{$reset_color%}'
+RPROMPT='%{$fg[green]%}% $(_git_branch_name)%{$reset_color%}'

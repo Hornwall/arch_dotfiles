@@ -18,11 +18,15 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/Applications/Android/sdk/platform-tools:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
+export PATH="/home/hannes/.yarn/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"
 
 export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
+
+export WINEPREFIX=~/.wine32
+export WINEARCH=win32
 
 #rbenv
 eval "$(rbenv init -)"
