@@ -5,6 +5,7 @@ source $HOME/.zsh/aliases
 source $HOME/.zsh/work_aliases
 source $HOME/.zsh_prompt
 
+
 # Save a ton of history
 HISTSIZE=20000
 HISTFILE=~/.zsh_history
@@ -22,6 +23,8 @@ export PATH="/home/hannes/.yarn/bin:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"
+export SSH_ASKPASS="/usr/bin/ksshaskpass"
+#export DOCKER_HOST=tcp://127.0.0.1:32768
 
 export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
 
@@ -30,6 +33,9 @@ export WINEARCH=win32
 
 #rbenv
 eval "$(rbenv init -)"
+
+eval "$( ssh-agent )" > /dev/null
+ssh-add </dev/null 2> /dev/null
 
 # editor
 export EDITOR=/usr/bin/nvim
