@@ -1,3 +1,5 @@
+#!/bin/bash
+
 layouts=$(ls "$HOME/.screenlayout")
 selected=$( echo "$layouts"$'\narandr'| dmenu -i -p 'Select display layout')
 if [ "$selected" = "arandr" ]; then
