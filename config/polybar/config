@@ -52,7 +52,7 @@ font-5 = "Font Awesome 5 Brands:pixelsize=9;1"
 
 modules-left = i3
 modules-center =
-modules-right = volume  wlan eth date powermenu
+modules-right = volume  wlan eth date
 
 tray-position = right
 tray-padding = 2
@@ -346,7 +346,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = "  "
 label-open-foreground = ${colors.secondary}
 label-close =  cancel
 label-close-foreground = ${colors.secondary}
