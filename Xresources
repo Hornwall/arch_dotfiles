@@ -3,4 +3,4 @@
 #include ".Xresources.d/urxvt"
 #include ".Xresources.d/xterm"
 
-
+Xcursor.size: 12
