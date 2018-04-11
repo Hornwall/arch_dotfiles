@@ -19,6 +19,7 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/Applications/Android/sdk/platform-tools:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
 export PATH="/home/hannes/.yarn/bin:$PATH"
+export PATH="/home/hannes/scripts/ruby:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"

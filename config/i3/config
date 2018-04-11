@@ -37,14 +37,16 @@ set $mod Mod1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec termite
 
 #start browser
 bindsym $mod+Shift+b exec firefox-beta
 
 # kill focused window
 bindsym $mod+Shift+q kill
-#
+
+# Lunch
+bindsym $mod+Shift+p exec termite --hold -e ~/.config/i3/scripts/lunch_search.sh
 
 #change screen config
 bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
