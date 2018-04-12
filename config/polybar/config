@@ -265,7 +265,7 @@ label = %time% %date%
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume> <label-volume>
+format-volume = <ramp-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 

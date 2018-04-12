@@ -45,11 +45,15 @@ bindsym $mod+Shift+b exec firefox-beta
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# Lunch
-bindsym $mod+Shift+p exec termite --hold -e ~/.config/i3/scripts/lunch_search.sh
 
-#change screen config
+# change screen config
 bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
+
+# ranger
+bindsym $mod+shift+p exec termite -e ranger
+
+# newsboat
+bindsym $mod+shift+n exec termite -e 'newsboat -r'
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
