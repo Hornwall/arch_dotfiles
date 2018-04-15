@@ -174,7 +174,11 @@ assign [class="Firefox"] $workspace_2
 assign [class="Chromium"] $workspace_2
 assign [class="Slack"] $workspace_3
 for_window [class="Spotify"] move to workspace $workspace_4
-for_window [title="term_float"] floating enable, border pixel 2
+
+for_window [title="term_float"] floating enable
+for_window [title="term_float"] border pixel 2
+for_window [title="term_float"] resize set 1300 900, move position center
+for_window [title="term_float"] move position center
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
