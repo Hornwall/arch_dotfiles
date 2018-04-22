@@ -18,6 +18,23 @@ primary = #99ac4c
 secondary = #e60053
 alert = #bd2c40
 
+black1    = #1e1f22
+black2    = #161719
+red1      = #d1434c
+red2      = #e37c44
+green1    = #99ac4c
+green2    = #3f7b4d
+yellow1   = #f3bd5a
+yellow2   = #947023
+blue1     = #688fb3
+blue2     = #4f4775
+magenta1  = #ab78ad
+magenta2  = #4b3148
+cyan1     = #68b5ab
+cyan2     = #68b5ab
+white1    = #5c656e
+white2    = #b7bcba
+
 [bar/top]
 monitor = ${env:MONITOR:}
 width = 100%
@@ -41,18 +58,21 @@ padding-left = 0
 padding-right = 0
 
 module-margin-left = 0
-module-margin-right = 2
+module-margin-right = 0
 
-font-0 = fixed:pixelsize=10;1
+font-0 = monospace:pixelsize=12;3
+font-8 = monospace:pixelsize=10;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-2 = siji:pixelsize=10;2
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-5 = "Font Awesome 5 Brands:pixelsize=12;3"
+font-6 = Hack:pixelsize=22;4
+font-7 = Hack:pixelsize=10:weight=bold;2
 
 modules-left = i3
 modules-center =
-modules-right = volume wlan eth battery date
+modules-right = arrow1 volume arrow2 battery arrow3 date
 
 tray-position = right
 tray-padding = 2
@@ -72,6 +92,30 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+content-background = ${colors.pink}
+
+[module/arrow1]
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.green1}
+content-background = ${colors.background}
+
+[module/arrow2]
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.red2}
+content-background = ${colors.green1}
+
+[module/arrow3]
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.red1}
+content-background = ${colors.red2}
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -258,9 +302,10 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
+format-background = ${colors.red1}
 ;format-underline = #0a6cf5
 
-label = %time% %date% 
+label = "%date% %time% "
 
 [module/volume]
 type = internal/volume
@@ -268,14 +313,19 @@ type = internal/volume
 format-volume = <ramp-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
+label-volume-background = ${colors.background-alt}
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-background = ${colors.green1}
+
 label-muted = 
 
 ramp-volume-0 = 
+ramp-volume-0-background = ${colors.green1}
 ramp-volume-1 = 
+ramp-volume-1-background = ${colors.green1}
 ramp-volume-2 = 
+ramp-volume-2-background = ${colors.green1}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #99ac4c
@@ -307,7 +357,7 @@ format-discharging = <ramp-capacity>
 ;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.red2}
 ;format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 
@@ -316,6 +366,7 @@ ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-background = ${colors.red2}
 
 animation-charging-0 = 
 animation-charging-1 = 
