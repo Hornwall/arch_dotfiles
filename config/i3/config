@@ -173,6 +173,7 @@ assign [class="Google-chrome"] $workspace_2
 assign [class="Firefox"] $workspace_2
 assign [class="Chromium"] $workspace_2
 assign [class="Slack"] $workspace_3
+assign [class="Signal"] $workspace_3
 for_window [class="Spotify"] move to workspace $workspace_4
 
 for_window [title="term_float"] floating enable
