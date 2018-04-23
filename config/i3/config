@@ -207,7 +207,7 @@ set $title-bar-urgent-color           #d1434c
 set $title-bar-foreground             #ffffff
 
 set $bg-color                         #161719f2
-set $status-line-color                #e37c44
+set $status-line-color                #ffffff
 
 set $active-bg-color                  #161719ee
 set $inactive-bg-color                #161719ee
@@ -237,9 +237,9 @@ bar {
 }
 
 # Audio controlls
-bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%- unmute
-bindsym XF86AudioMute exec amixer set 'Master' toggle
+bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+ unmute;  exec pkill  -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%- unmute;  exec pkill  -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer set 'Master' toggle;  exec pkill  -RTMIN+10 i3blocks
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
