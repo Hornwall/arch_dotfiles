@@ -77,7 +77,7 @@ modules-right = arrow1 volume arrow2 battery arrow3 date
 tray-position = right
 tray-padding = 2
 ;tray-transparent = true
-;tray-background = #0063ff
+tray-background = ${colors.red1}
 
 ;wm-restack = bspwm
 ;wm-restack = i3
