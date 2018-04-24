@@ -73,4 +73,4 @@ esac
 
 output=$(volume | format)
 
-echo "<span foreground='$background'></span><span background='$background'>$output</span>"
+echo "<span foreground='$background'></span><span background='$background'> VOL $output </span>"

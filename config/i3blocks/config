@@ -24,21 +24,27 @@
 #
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
-command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
-markup=none
+command=$HOME/.config/i3blocks/modules/$BLOCK_NAME
+separator_block_width=0
+markup=pango
+separator=false
 
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
-label=VOL
+#[volume]
+#label=VOL
 #label=♪
-instance=Master
+#instance=Master
 #instance=PCM
-separator=false
+#separator=false
+#interval=once
+#
+
+[volume]
+markup=pango
 interval=once
 signal=10
 
@@ -107,21 +113,13 @@ min_width=CPU: 100.00%
 #instance=1
 #interval=30
 
-[bat]
-command=$HOME/.config/i3blocks/modules/battery.sh
-separator_block_width=0
-markup=pango
+[battery]
 interval=30
-separator=false
 
 # Date Time
 #
 [time]
-command=$HOME/.config/i3blocks/modules/time.sh
-separator_block_width=0
-markup=pango
 interval=5
-separator=false
 
 
 # Generic media player support
