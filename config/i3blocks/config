@@ -38,6 +38,7 @@ label=VOL
 #label=♪
 instance=Master
 #instance=PCM
+separator=false
 interval=once
 signal=10
 
@@ -110,7 +111,7 @@ min_width=CPU: 100.00%
 command=$HOME/.config/i3blocks/modules/battery.sh
 separator_block_width=0
 markup=pango
-interval=5
+interval=30
 separator=false
 
 # Date Time

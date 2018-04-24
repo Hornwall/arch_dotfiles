@@ -1,0 +1,8 @@
+if [[ $BLOCK_BUTTON = 1 ]]; then
+  termite -t term_float -e calcurse
+fi
+
+background='#d1434c'
+nextbg='#e37c44'
+date=`date '+%Y-%m-%d %H:%M'`
+echo "<span background='$nextbg' foreground='$background'></span><span background='$background'> $date </span>"
