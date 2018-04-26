@@ -2,7 +2,7 @@
 background='#e37c44'
 nextbg='#99ac4c'
 
-batteries=$(acpi -b)
+batteries=$(acpi -b | grep -v 'rate information unavailable')
 charge=$(echo 0)
 batteryCount=$(echo 0)
 
