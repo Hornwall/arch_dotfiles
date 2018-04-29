@@ -1,0 +1,238 @@
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace, Awesome 10
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+set $mod Mod1
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec termite
+
+#start browser
+bindsym $mod+Shift+b exec firefox-beta
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+
+# change screen config
+bindsym $mod+Shift+s exec ~/.config/sway/scripts/screen_layout.sh
+
+# ranger
+bindsym $mod+shift+p exec urxvt -title term_float -e ranger
+
+# newsboat
+bindsym $mod+shift+n exec termite -t term_float -e 'newsboat -r'
+
+# calcurse
+bindsym $mod+shift+m exec termite -t term_float -e calcurse
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+#rofi
+#bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -font "Roboto 24"
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Mod4+Shift+$left move workspace to output left
+bindsym $mod+Mod4+Shift+$up move workspace to output up
+bindsym $mod+Mod4+Shift+$down move workspace to output down
+bindsym $mod+Mod4+Shift+$right move workspace to output right
+
+# split in horizontal orientation
+bindsym $mod+x split h
+
+# split in vertical orientation
+bindsym $mod+c split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+set $workspace_1  1:
+set $workspace_2  2:
+set $workspace_3  3:
+set $workspace_4  4:
+set $workspace_5  5
+set $workspace_6  6
+set $workspace_7  7
+set $workspace_8  8
+set $workspace_9  9
+set $workspace_10 10
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace_1
+bindsym $mod+2 workspace $workspace_2
+bindsym $mod+3 workspace $workspace_3
+bindsym $mod+4 workspace $workspace_4
+bindsym $mod+5 workspace $workspace_5
+bindsym $mod+6 workspace $workspace_6
+bindsym $mod+7 workspace $workspace_7
+bindsym $mod+8 workspace $workspace_8
+bindsym $mod+9 workspace $workspace_9
+bindsym $mod+0 workspace $workspace_10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace_1
+bindsym $mod+Shift+2 move container to workspace $workspace_2
+bindsym $mod+Shift+3 move container to workspace $workspace_3
+bindsym $mod+Shift+4 move container to workspace $workspace_4
+bindsym $mod+Shift+5 move container to workspace $workspace_5
+bindsym $mod+Shift+6 move container to workspace $workspace_6
+bindsym $mod+Shift+7 move container to workspace $workspace_7
+bindsym $mod+Shift+8 move container to workspace $workspace_8
+bindsym $mod+Shift+9 move container to workspace $workspace_9
+bindsym $mod+Shift+0 move container to workspace $workspace_10
+
+
+# App-specific workspaces
+assign [class="URxvt"] $workspace_1
+assign [class="Google-chrome"] $workspace_2
+assign [class="Firefox"] $workspace_2
+assign [class="Chromium"] $workspace_2
+assign [class="Slack"] $workspace_3
+assign [class="Signal"] $workspace_3
+for_window [class="Spotify"] move to workspace $workspace_4
+
+for_window [title="term_float"] floating enable
+for_window [title="term_float"] border pixel 2
+for_window [title="term_float"] resize set 1300 900, move position center
+for_window [title="term_float"] move position center
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# Lock computer
+bindsym $mod+Shift+z exec ~/.config/sway/scripts/lock.sh
+
+bindsym $mod+Shift+u resize shrink height 30 px or 30 ppt
+bindsym $mod+Shift+i resize grow height 30 px or 30 ppt
+bindsym $mod+Shift+y resize shrink width 30 px or 30ppt
+bindsym $mod+Shift+o resize grow width 30 px or 30 ppt
+
+#proper floating
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+set $title-bar-color                  #99ac4c
+set $title-bar-unfocused-color        #161719
+set $title-bar-urgent-color           #d1434c
+set $title-bar-foreground             #ffffff
+
+set $bg-color                         #161719f2
+set $status-line-color                #ffffff
+
+set $active-bg-color                  #161719ee
+set $inactive-bg-color                #161719ee
+set $text-color                       #99ac4c
+set $inactive-text-color              #5c656e
+set $urgent-text-color                #d1434c
+
+#Title colors
+client.focused $title-bar-color $title-bar-color $title-bar-foreground $title-bar-foreground
+client.unfocused $title-bar-unfocused-color $title-bar-unfocused-color $title-bar-foreground $title-bar-foreground
+client.urgent  $title-bar-urgent-color $title-bar-urgent-color $title-bar-foreground $title-bar-foreground
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3blocks
+        height 18
+        colors {
+          background $bg-color
+          statusline $status-line-color
+ 
+          focused_workspace $active-bg-color $active-bg-color $text-color
+          active_workspace $active-bg-color $active-bg-color $text-color
+          inactive_workspace $active-bg-color $inactive-bg-color $inactive-text-color
+          urgent_workspace $active-bg-color $active-bg-color $urgent-text-color
+        }
+}
+
+# Audio controlls
+bindsym XF86AudioRaiseVolume exec amixer set 'Master' 5%+ unmute;  exec pkill  -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer set 'Master' 5%- unmute;  exec pkill  -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer set 'Master' toggle;  exec pkill  -RTMIN+10 i3blocks
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# No title bars
+new_window none
+
+# gaps config
+gaps outer 4
+gaps inner 8
+smart_gaps on
+
+# Turn on compton
+exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+
+exec --no-startup-id xrdb .Xresources
+
+# Turn on polybar
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+output "*" background ~/Pictures/wall.jpg fill
