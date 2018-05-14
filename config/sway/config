@@ -37,7 +37,7 @@ bindsym $mod+shift+n exec termite -t term_float -e 'newsboat -r'
 bindsym $mod+shift+m exec termite -t term_float -e calcurse
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id sway-dmenu-desktop
 
 #rofi
 #bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -font "Roboto 24"
@@ -153,6 +153,9 @@ for_window [title="term_float"] floating enable
 for_window [title="term_float"] border pixel 2
 for_window [title="term_float"] resize set 1300 900, move position center
 for_window [title="term_float"] move position center
+
+# exit sway (logs you out of your wayland session)
+bindsym $mod+Shift+e exit
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
