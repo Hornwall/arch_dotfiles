@@ -1,9 +1,13 @@
-Rxvt*font:       xft:DejavuSansMono:size=40:antialias=true, xft:FontAwesome:size=40:antialias=true
+Rxvt*font:       xft:DejavuSansMono:size=12:antialias=true, xft:FontAwesome:size=12:antialias=true
+
 
 URxvt*scrollBar:   false
 URxvt.perl-ext-common: selection-to-clipboard,clipboard
 
 URxvt.keysym.Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
 URxvt.iso14755: False
 
 ! special

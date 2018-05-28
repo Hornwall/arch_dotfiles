@@ -1,0 +1,19 @@
+#!/bin/bash
+background='#e37c44'
+nextbg='#99ac4c'
+
+batteries=$(acpi -b | grep -v 'rate information unavailable')
+charge=$(echo 0)
+batteryCount=$(echo 0)
+
+regpercent="([0-9]{0,3})%"
+
+while read -r line; do
+  if [[ $line =~ $regpercent ]]; then
+    ((charge+=${BASH_REMATCH[1]}))
+    ((batteryCount++))
+  fi
+done <<< "$batteries"
+
+percent=$(printf "%3d\n" $((charge/batteryCount)))
+echo "<span background='$nextbg' foreground='$background'></span><span background='$background'> BAT $((charge/batteryCount))% </span>"

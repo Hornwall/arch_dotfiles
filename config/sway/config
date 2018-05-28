@@ -1,28 +1,6 @@
-# i config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace, Awesome 10
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -40,14 +18,14 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 #start browser
-bindsym $mod+Shift+b exec firefox
+bindsym $mod+Shift+b exec firefox-beta
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 
 # change screen config
-bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
+bindsym $mod+Shift+s exec ~/.config/sway/scripts/screen_layout.sh
 
 # ranger
 bindsym $mod+shift+p exec urxvt -title term_float -e ranger
@@ -59,15 +37,10 @@ bindsym $mod+shift+n exec termite -t term_float -e 'newsboat -r'
 bindsym $mod+shift+m exec termite -t term_float -e calcurse
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id sway-dmenu-desktop
+
 #rofi
 #bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -font "Roboto 24"
-#
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+$left focus left
@@ -181,21 +154,18 @@ for_window [title="term_float"] border pixel 2
 for_window [title="term_float"] resize set 1300 900, move position center
 for_window [title="term_float"] move position center
 
+# exit sway (logs you out of your wayland session)
+bindsym $mod+Shift+e exit
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
 # Lock computer
-bindsym $mod+Shift+z exec ~/.config/i3/scripts/lock.sh
-
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+z exec ~/.config/sway/scripts/lock.sh
 
 bindsym $mod+Shift+u resize shrink height 30 px or 30 ppt
 bindsym $mod+Shift+i resize grow height 30 px or 30 ppt
 bindsym $mod+Shift+y resize shrink width 30 px or 30ppt
 bindsym $mod+Shift+o resize grow width 30 px or 30 ppt
-
 
 #proper floating
 for_window [window_role="pop-up"] floating enable
@@ -262,11 +232,10 @@ smart_gaps on
 # Turn on compton
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-# Set wallpaper
-exec_always sh ~/.fehbg &
+
+exec --no-startup-id xrdb .Xresources
 
 # Turn on polybar
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Turn of HDMI monitor
-exec xrandr --output HDMI-0 --off
+output "*" background ~/Pictures/wall.jpg fill

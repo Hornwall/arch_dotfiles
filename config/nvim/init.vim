@@ -69,6 +69,7 @@ Bundle "kana/vim-textobj-user"
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle 'chrisbra/Colorizer'
 
 set nocompatible
 if has("autocmd")
