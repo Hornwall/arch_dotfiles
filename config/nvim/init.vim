@@ -224,6 +224,7 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.rs set filetype=rust
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
+  autocmd BufRead,BufNewFile *.slim set filetype=slim
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
@@ -255,6 +256,9 @@ set cursorline
 set nowrap
 set colorcolumn=80
 autocmd FileType scala setlocal colorcolumn=120
+
+" Highlighted find and replace
+set inccommand=nosplit
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
