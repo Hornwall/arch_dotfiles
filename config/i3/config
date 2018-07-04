@@ -58,6 +58,9 @@ bindsym $mod+shift+n exec termite -t term_float -e 'newsboat -r'
 # calcurse
 bindsym $mod+shift+m exec termite -t term_float -e calcurse
 
+# Screenshot to clipboard
+bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 #rofi
