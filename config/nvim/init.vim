@@ -71,6 +71,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'chrisbra/Colorizer'
+Bundle 'w0rp/ale'
 
 set nocompatible
 if has("autocmd")
