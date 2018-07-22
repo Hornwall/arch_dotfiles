@@ -131,8 +131,9 @@ syntax on
 au BufNewFile,BufRead Gemfile set filetype=ruby
 
 " Theming
+set termguicolors
 set background=dark
-let g:hybrid_use_iTerm_colors = 1
+let hybrid_transparent = 1
 colorscheme hybrid
 
 " Use Ag over Grep
