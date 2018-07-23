@@ -65,3 +65,5 @@ map <Leader>f :ALEFix<CR>
 " vim-argwrap
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
+" deliMate
+inoremap <expr> <C-j> delimitMate#JumpAny()

@@ -16,7 +16,6 @@ Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-cucumber"
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle "slim-template/vim-slim.git"
-Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-unimpaired"
 Bundle "tpope/vim-haml"
 Bundle "tpope/vim-markdown"
@@ -55,17 +54,37 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'chrisbra/Colorizer'
+Bundle 'lisinge/vim-hybrid'
 
 set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
 
+"Bundle 'vim-airline/vim-airline'
+"let g:airline_theme = 'hybrid'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_splits = 0
+"let g:airline#extensions#tabline#show_buffers = 0
+"let g:airline_powerline_fonts = 1
+"let g:airline_section_x = 'x'
+"let g:airline_section_y = 'y'
+"let g:airline_section_z = 'z'
+"let g:airline#extensions#hunks#enabled = 0
+"let g:airline#extensions#obsession#enabled = 0
+"let g:airline#extensions#whitespace#enabled = 0
+"let g:airline#extensions#whitespace#show_message = 0
+
 Bundle "tpope/vim-fugitive"
 autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
 
 Bundle 'Raimondi/delimitMate'
-let g:delimitMate_expand_space = 1
+let g:delimitMate_expand_space=1
+let g:delimitMate_expand_cr=2
+let g:delimitMate_jump_expansion=1
+
+" vim-endwise needs to load after delimitMate
+Bundle "tpope/vim-endwise"
 
 Bundle "thoughtbot/vim-rspec"
 let g:rspec_command = "Dispatch bundle exec rspec {spec} -f progress"
