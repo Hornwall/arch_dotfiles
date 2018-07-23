@@ -1,3 +1,9 @@
+" change the mapleader from \ to ,
+let mapleader=","
+
+" Mouse support
+set mouse=a
+
 " Tab completion
 " will insert tab at beginning of line,
 " will use completion if not at beginning
