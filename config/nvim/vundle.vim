@@ -55,7 +55,6 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'chrisbra/Colorizer'
-Bundle 'w0rp/ale'
 
 set nocompatible
 if has("autocmd")
@@ -80,9 +79,16 @@ Bundle "nathanaelkane/vim-indent-guides"
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
-Bundle "scrooloose/syntastic"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
+Bundle 'w0rp/ale'
+let g:ale_fixers = {
+\   'ruby': [
+\       'rubocop'
+\   ],
+\}
+
+
+Bundle 'FooSoft/vim-argwrap'
+let g:argwrap_padded_braces = '{'
+nnoremap <silent> <leader>w :ArgWrap<CR>
 
 call vundle#end()

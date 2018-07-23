@@ -58,3 +58,10 @@ nnoremap <Down> :echoe "Use j"<CR>
 if has('nvim')
   nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
+
+" Ale
+map <Leader>f :ALEFix<CR>
+
+" vim-argwrap
+nnoremap <silent> <leader>w :ArgWrap<CR>
+

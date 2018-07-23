@@ -35,9 +35,6 @@ export WINEARCH=win32
 #rbenv
 eval "$(rbenv init -)"
 
-eval "$( ssh-agent )" > /dev/null
-ssh-add </dev/null 2> /dev/null
-
 # editor
 export EDITOR=/usr/bin/nvim
 
