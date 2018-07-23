@@ -1,3 +1,7 @@
+source ~/.config/nvim/vundle.vim
+source ~/.config/nvim/theming.vim
+source ~/.config/nvim/keybinds.vim
+
 " change the mapleader from \ to ,
 let mapleader=","
 
@@ -14,94 +18,7 @@ set autowrite
 
 set lazyredraw
 
-" Declare bundles are handled via Vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
 
-runtime macros/matchit.vim
-
-" Let Vundle manage Vundle
-Bundle "gmarik/Vundle.vim"
-
-" Define bundles via Github repos
-Bundle "danro/rename.vim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
-Bundle "nanki/treetop.vim"
-Bundle "timcharper/textile.vim"
-Bundle "tpope/vim-cucumber"
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle "slim-template/vim-slim.git"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-unimpaired"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-rhubarb"
-Bundle "tpope/vim-projectionist"
-Bundle "tpope/vim-vinegar"
-Bundle "tpope/vim-rbenv"
-Bundle "vim-scripts/matchit.zip"
-Bundle "vim-scripts/ctags.vim"
-Bundle "vim-scripts/greplace.vim"
-Bundle "xenoterracide/html.vim"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "godlygeek/tabular"
-Bundle "rking/ag.vim"
-Bundle "jamessan/vim-gnupg"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "ervandew/supertab"
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "vim-ruby/vim-ruby"
-Bundle "derekwyatt/vim-scala"
-Bundle "szw/vim-g"
-Bundle "radenling/vim-dispatch-neovim"
-Bundle "elmcast/elm-vim"
-Bundle "rust-lang/rust.vim"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "kana/vim-textobj-user"
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'ngmy/vim-rubocop'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'chrisbra/Colorizer'
-Bundle 'w0rp/ale'
-
-set nocompatible
-if has("autocmd")
-  filetype indent plugin on
-endif
-
-Bundle "tpope/vim-fugitive"
-autocmd BufReadPost fugitive://* set bufhidden=delete " Delete fugitive buffers
-
-Bundle 'Raimondi/delimitMate'
-let g:delimitMate_expand_space = 1
-
-Bundle "thoughtbot/vim-rspec"
-let g:rspec_command = "Dispatch bundle exec rspec {spec} -f progress"
-
-
-Bundle "mattn/gist-vim"
-let g:gist_detect_filetype = 1
-let g:gist_clip_command = 'pbcopy'
-
-Bundle "nathanaelkane/vim-indent-guides"
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-
-Bundle "scrooloose/syntastic"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
-
-call vundle#end()
 filetype plugin indent on
 
 set scrolloff=3
@@ -118,23 +35,12 @@ set statusline+=[%{fugitive#head(7)}]
 set clipboard=unnamedplus
 set backspace=indent,eol,start
 
-" Colors
-autocmd VimEnter,Colorscheme * :hi CursorLine       ctermbg=0
-autocmd VimEnter,Colorscheme * :hi CursorLineNr     ctermbg=0
-autocmd VimEnter,Colorscheme * :hi StatusLine       ctermfg=2
-autocmd VimEnter,Colorscheme * :hi StatusLineNC     ctermfg=0
 
 " Syntax highlightning
 syntax on
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
-
-" Theming
-set termguicolors
-set background=dark
-let hybrid_transparent = 1
-colorscheme hybrid
 
 " Use Ag over Grep
 set grepprg=ag\ --nogroup\ --nocolor
@@ -145,64 +51,6 @@ let g:ctrlp_use_caching = 0
 
 " Mouse support
 set mouse=a
-
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-set wildmode=list:longest,list:full
-set complete=.,w,t
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
-endfunction
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-
-nmap <Leader><Leader> <c-^>
-nmap <Leader>h :rightbelow split<CR> " Split window horizontal
-nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
-nmap <Leader>av :AV<CR>
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>q :NERDTreeToggle<CR>
-
-" Fugitive mappings
-nnoremap <Leader>gl :Glog<CR>
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gd :Gdiff<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gbl :Gblame<CR>
-nnoremap <Leader>gbr :Gbrowse<CR>
-nnoremap <Leader>gpl :Gpull<CR>
-nnoremap <Leader>gps :Gpush<CR>
-nnoremap <Leader>gw :Gwrite<CR>
-nnoremap <Leader>gr :Gread<CR>
-
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a: :Tabularize /:\zs<CR>
-vmap <Leader>a: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,\zs<CR>
-vmap <Leader>a, :Tabularize /,\zs<CR>
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-nmap <Tab><Tab> :NERDTreeToggle<CR>
-let g:NERDTreeDirArrows=0
-
-" Fix nvim split switching in tmux
-if has('nvim')
-  nmap <bs> :<c-u>TmuxNavigateLeft<cr>
-endif
 
 augroup vimrcEx
   autocmd!
