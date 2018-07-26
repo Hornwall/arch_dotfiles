@@ -52,11 +52,11 @@ bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
 # ranger
 bindsym $mod+shift+p exec urxvt -title term_float -e ranger
 
-# newsboat
-bindsym $mod+shift+n exec termite -t term_float -e 'newsboat -r'
+# calcurse
+bindsym $mod+shift+n exec termite -t term_float -e calcurse
 
 # calcurse
-bindsym $mod+shift+m exec termite -t term_float -e calcurse
+bindsym $mod+shift+m exec termite -t term_float -e neomutt
 
 # Screenshot to clipboard
 bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
