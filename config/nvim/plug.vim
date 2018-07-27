@@ -50,48 +50,52 @@ Plug 'ngmy/vim-rubocop'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'lisinge/vim-hybrid'
+Plug 'easymotion/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise'
+Plug 'thoughtbot/vim-rspec'
+Plug 'mattn/gist-vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'w0rp/ale'
+Plug 'FooSoft/vim-argwrap'
 
-
-
+call plug#end()
 
 set nocompatible
 if has('autocmd')
   filetype indent plugin on
 endif
 
-Plug 'tpope/vim-fugitive'
+" tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
 
-Plug 'Raimondi/delimitMate'
+" Raimondi/delimitMate
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 let g:delimitMate_jump_expansion=1
 
-" vim-endwise needs to load after delimitMate
-Plug 'tpope/vim-endwise'
-
-Plug 'thoughtbot/vim-rspec'
+" thoughtbot/vim-rspec
 let g:rspec_command = 'Dispatch bundle exec rspec {spec} -f progress'
 
 
-Plug 'mattn/gist-vim'
+" mattn/gist-vim
 let g:gist_detect_filetype = 1
 let g:gist_clip_command = 'pbcopy'
 
-Plug 'nathanaelkane/vim-indent-guides'
+" nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 
-Plug 'w0rp/ale'
+" w0rp/ale
 let g:ale_fixers = {
 \   'ruby': [
 \       'rubocop'
 \   ],
 \}
 
-
-Plug 'FooSoft/vim-argwrap'
+" FooSoft/vim-argwrap
 let g:argwrap_padded_braces = '{'
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
-call plug#end()

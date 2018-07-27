@@ -9,5 +9,5 @@ set termguicolors
 set background=dark
 let hybrid_transparent = 1
 colorscheme hybrid
-"au VimEnter * colorscheme hybrid
-"au VimEnter * AirlineRefresh
+au VimEnter * colorscheme hybrid
+au VimEnter * AirlineRefresh

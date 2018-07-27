@@ -20,6 +20,7 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 nmap <Leader><Leader> <c-^>
+map <Leader><Leader> <Plug>(easymotion-prefix)
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 nmap <Leader>av :AV<CR>
