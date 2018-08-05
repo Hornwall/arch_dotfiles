@@ -10,7 +10,9 @@
 [colors]
 ;background = ${xrdb:color0:#222}
 background = #f1161719
+;background = #00161719
 background-alt = #f1444444
+;background-alt = #00444444
 ;foreground = ${xrdb:color7:#222}
 foreground = #fff
 foreground-alt = #fff
@@ -39,11 +41,11 @@ white2    = #b7bcba
 monitor = ${env:MONITOR:}
 width = 100%
 height = 22
-;offset-x = 1%
-;offset-y = 1%
+offset-x = 1%
+offset-y = 1%
 radius = 0.0
-fixed-center = false
-bottom = true
+fixed-center = true
+bottom = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -57,8 +59,8 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 0
-module-margin-right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = monospace:pixelsize=12;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -71,8 +73,8 @@ font-7 = Hack:pixelsize=10:weight=bold;2
 font-8 = monospace:pixelsize=10;3
 
 modules-left = i3
-modules-center =
-modules-right = arrow1 volume arrow2 battery arrow3 date
+modules-center = 
+modules-right = volume playerctl battery date
 
 tray-position = right
 tray-padding = 2
@@ -151,20 +153,20 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
+label-focused-background = ${colors.background}
+label-focused-underline= ${colors.background}
+label-focused-padding = 1
 
 label-occupied = %index%
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 
 [module/i3]
 type = internal/i3
@@ -181,17 +183,17 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = ●
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = ○
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = ◉
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
@@ -200,6 +202,14 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/playerctl]
+type = custom/script
+exec = ~/.config/polybar/scripts/player_status.rb -m 20 -s 0.2
+exec-if = playerctl status | grep Playing
+click-left = playerctl play-pause
+tail = true
+format-prefix =  
 
 [module/mpd]
 type = internal/mpd
@@ -294,38 +304,38 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %d/%m/%Y
-date-alt = "%Y-%m-%d"
+date = %A,%e %B
+date-alt = "%d/%m/%Y
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-background = ${colors.red1}
+;format-prefix-foreground = ${colors.foreground-alt}
+;format-background = ${colors.red1}
 ;format-underline = #0a6cf5
 
-label = "%date% %time% "
+label = " %date%  %time% "
 
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume>
+format-volume = <ramp-volume> <bar-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 label-volume-background = ${colors.background-alt}
 
 format-muted-prefix = " "
-format-muted-background = ${colors.green1}
+#format-muted-background = ${colors.green1}
 
 label-muted = 
 
 ramp-volume-0 = 
-ramp-volume-0-background = ${colors.green1}
+;ramp-volume-0-background = ${colors.green1}
 ramp-volume-1 = 
-ramp-volume-1-background = ${colors.green1}
+;ramp-volume-1-background = ${colors.green1}
 ramp-volume-2 = 
-ramp-volume-2-background = ${colors.green1}
+;ramp-volume-2-background = ${colors.green1}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #99ac4c
@@ -336,9 +346,9 @@ bar-volume-foreground-4 = #99ac4c
 bar-volume-foreground-5 = #e37c44
 bar-volume-foreground-6 = #d1434c
 bar-volume-gradient = false
-bar-volume-indicator = ''
+bar-volume-indicator = ●
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = ▬
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
