@@ -62,7 +62,7 @@ bindsym $mod+shift+m exec termite -t term_float -e neomutt
 bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show drun
 #rofi
 #bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -font "Roboto 24"
 #
