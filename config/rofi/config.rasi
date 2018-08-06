@@ -1,5 +1,19 @@
+
 configuration {
 modi: "drun,ssh";
 show-icons: true;
 }
 
+@import "/usr/share/rofi/themes/sidebar.rasi"
+
+#mainbox {
+background-color: #161719f1;
+}
+
+#inputbar {
+background-color: #444444f1;
+}
+
+#element selected normal{
+  background-color: #99ac4c;
+}
