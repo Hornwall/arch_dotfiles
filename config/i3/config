@@ -59,7 +59,8 @@ bindsym $mod+shift+n exec termite -t term_float -e calcurse
 bindsym $mod+shift+m exec termite -t term_float -e neomutt
 
 # Screenshot to clipboard
-bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
+#bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
+bindsym --release $mod+p exec flameshot gui
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun
