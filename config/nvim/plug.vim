@@ -60,6 +60,8 @@ Plug 'mattn/gist-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'AndrewRadev/splitjoin.vim'
 
 call plug#end()
 
@@ -87,6 +89,10 @@ let g:gist_clip_command = 'pbcopy'
 " nathanaelkane/vim-indent-guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
+
+" ludovicchabant/vim-gutentags
+let g:gutentags_file_list_command = 'rg --files --ignore-file=.tagignore'
+let g:gutentags_ctags_executable_ruby = 'rtags'
 
 " w0rp/ale
 let g:ale_fixers = {

@@ -265,6 +265,7 @@ smart_gaps on
 
 # Turn on compton
 exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id Desktop-Bridge
 exec --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # Set wallpaper
 exec_always sh ~/.fehbg &

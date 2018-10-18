@@ -66,5 +66,9 @@ map <Leader>f :ALEFix<CR>
 " vim-argwrap
 nnoremap <silent> <leader>w :ArgWrap<CR>
 
+" Tag bindings
+nnoremap <silent><expr> <c-w><c-]> ':<c-u>vert wincmd ]<cr>'
+nnoremap <silent><expr> <c-w>] ':<c-u>vert wincmd ]<cr>'
+
 " deliMate
 inoremap <expr> <C-j> delimitMate#JumpAny()
