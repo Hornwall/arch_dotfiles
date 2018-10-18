@@ -38,6 +38,7 @@ Plug 'ervandew/supertab'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'vim-ruby/vim-ruby'
+Plug 'elixir-editors/vim-elixir'
 Plug 'derekwyatt/vim-scala'
 Plug 'szw/vim-g'
 Plug 'radenling/vim-dispatch-neovim'
@@ -62,6 +63,7 @@ Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'posva/vim-vue'
 
 call plug#end()
 
@@ -97,9 +99,11 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 " w0rp/ale
 let g:ale_fixers = {
 \   'ruby': [
-\       'rubocop'
+\     'rubocop',
 \   ],
-\}
+\   'elixir': [
+\     'mix_format'
+\   ]}
 
 " FooSoft/vim-argwrap
 let g:argwrap_padded_braces = '{'
