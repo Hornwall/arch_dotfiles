@@ -4,7 +4,6 @@ runtime macros/matchit.vim
 
 " Define bundles via Github repos
 Plug 'danro/rename.vim'
-Plug 'kchmck/vim-coffee-script'
 Plug 'kien/ctrlp.vim'
 Plug 'nanki/treetop.vim'
 Plug 'timcharper/textile.vim'
@@ -28,7 +27,6 @@ Plug 'tpope/vim-rbenv'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/greplace.vim'
-Plug 'xenoterracide/html.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 Plug 'rking/ag.vim'
@@ -37,18 +35,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ervandew/supertab'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'elixir-editors/vim-elixir'
-Plug 'derekwyatt/vim-scala'
 Plug 'szw/vim-g'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'elmcast/elm-vim'
-Plug 'rust-lang/rust.vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ngmy/vim-rubocop'
-Plug 'jelera/vim-javascript-syntax'
 Plug 'chrisbra/Colorizer'
 Plug 'lisinge/vim-hybrid'
 Plug 'easymotion/vim-easymotion'
@@ -63,7 +56,7 @@ Plug 'w0rp/ale'
 Plug 'FooSoft/vim-argwrap'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'posva/vim-vue'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -78,7 +71,8 @@ autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
 " Raimondi/delimitMate
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
-let g:delimitMate_jump_expansion=1
+
+let g:polyglot_disabled = ['coffee-script']
 
 " thoughtbot/vim-rspec
 let g:rspec_command = 'Dispatch bundle exec rspec {spec} -f progress'
@@ -100,10 +94,8 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 let g:ale_fixers = {
 \   'ruby': [
 \     'rubocop',
-\   ],
-\   'elixir': [
-\     'mix_format'
-\   ]}
+\   ]
+\ }
 
 " FooSoft/vim-argwrap
 let g:argwrap_padded_braces = '{'

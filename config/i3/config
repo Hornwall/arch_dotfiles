@@ -202,7 +202,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # Lock computer
-bindsym $mod+Shift+z exec ~/.config/i3/scripts/lock.sh
+bindsym $mod+Shift+z exec mantablockscreen
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -276,7 +276,7 @@ gaps inner 8
 smart_gaps on
 
 # Turn on compton
-exec --no-startup-id compton --xrender-sync-fence
+exec --no-startup-id compton --xrender-sync-fence --dbus
 exec --no-startup-id Desktop-Bridge
 exec --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # Set wallpaper
