@@ -27,6 +27,9 @@ export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
 #export DOCKER_HOST=tcp://127.0.0.1:32768
+#
+
+export GOPATH="$HOME/code/go"
 
 export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
 

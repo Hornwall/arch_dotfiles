@@ -49,14 +49,18 @@ bindsym $mod+Shift+q kill
 # change screen config
 bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
 
+# Emoji search
+bindsym $mod+Shift+g exec ~/.config/i3/scripts/emoji.sh
+
+
 # ranger
-bindsym $mod+shift+p exec urxvt -title term_float -e ranger
+bindsym $mod+shift+p exec kitty -T term_float ranger
 
 # calcurse
-bindsym $mod+shift+n exec kitty -t term_float -e calcurse
+bindsym $mod+shift+n exec kitty -T term_float calcurse
 
 # calcurse
-bindsym $mod+shift+m exec kitty -t term_float -e neomutt
+bindsym $mod+shift+m exec kitty -T term_float neomutt
 
 # Screenshot to clipboard
 #bindsym --release $mod+p exec ~/.config/i3/scripts/screenshot.sh
@@ -172,7 +176,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace_10
 
 
 # App-specific workspaces
-assign [class="URxvt"] $workspace_1
+assign [class="kitty"] $workspace_1
 assign [class="Google-chrome"] $workspace_2
 assign [class="Firefox"] $workspace_2
 assign [class="Chromium"] $workspace_2

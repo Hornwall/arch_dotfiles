@@ -24,7 +24,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-rbenv'
-Plug 'vim-scripts/matchit.zip'
+Plug 'andymass/vim-matchup'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/greplace.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -72,6 +72,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 
+" sheerun/vim-polyglot
 let g:polyglot_disabled = ['coffee-script']
 
 " thoughtbot/vim-rspec
