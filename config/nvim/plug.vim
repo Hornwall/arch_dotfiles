@@ -73,7 +73,7 @@ let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 
 " sheerun/vim-polyglot
-let g:polyglot_disabled = ['coffee-script']
+" let g:polyglot_disabled = ['coffee-script']
 
 " thoughtbot/vim-rspec
 let g:rspec_command = 'Dispatch bundle exec rspec {spec} -f progress'

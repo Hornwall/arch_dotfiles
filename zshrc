@@ -52,10 +52,14 @@ setopt auto_cd
 # Avoid issues in tmux
 export LC_ALL="en_US.UTF-8"
 
-#scale
+# Scale
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
+
+# Google Cloud
+source '/opt/google-cloud-sdk/path.zsh.inc'
+source '/opt/google-cloud-sdk/completion.zsh.inc'
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
