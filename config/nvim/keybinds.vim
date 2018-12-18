@@ -29,6 +29,10 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>q :NERDTreeToggle<CR>
+nmap <silent> <leader>t :TestFile<CR>
+nmap <silent> <leader>s :TestNearest<CR>
+nmap <silent> <leader>l :TestLast<CR> 
+nmap <silent> <leader>a :TestSuite<CR>
 
 " Fugitive mappings
 nnoremap <Leader>gl :Glog<CR>

@@ -36,7 +36,6 @@ Plug 'ervandew/supertab'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'szw/vim-g'
-Plug 'radenling/vim-dispatch-neovim'
 Plug 'elmcast/elm-vim'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'kana/vim-textobj-user'
@@ -57,6 +56,7 @@ Plug 'FooSoft/vim-argwrap'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'janko-m/vim-test'
 
 call plug#end()
 
@@ -72,11 +72,9 @@ autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
 let g:delimitMate_expand_space=1
 let g:delimitMate_expand_cr=2
 
-" sheerun/vim-polyglot
-" let g:polyglot_disabled = ['coffee-script']
-
-" thoughtbot/vim-rspec
-let g:rspec_command = 'Dispatch bundle exec rspec {spec} -f progress'
+" janko-m/vim-test
+let g:test#strategy = "dispatch"
+let g:test#runner_commands = ['RSpec']
 
 
 " mattn/gist-vim
