@@ -53,6 +53,13 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>a, :Tabularize /,\zs<CR>
 vmap <Leader>a, :Tabularize /,\zs<CR>
 
+" Config mappings
+nnoremap <leader>cc :e $MYVIMRC<CR>
+nnoremap <leader>cs :so $MYVIMRC<CR>:AirlineRefresh<CR>
+nnoremap <leader>cpi :PlugInstall<CR>
+nnoremap <leader>cpu :PlugUpdate<CR>
+nnoremap <leader>cpc :PlugClean<CR>
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
