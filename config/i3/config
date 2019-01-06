@@ -53,9 +53,6 @@ bindsym $mod+Shift+s exec ~/.config/i3/scripts/screen_layout.sh
 bindsym $mod+Shift+g exec ~/.config/i3/scripts/emoji.sh
 
 
-# ranger
-bindsym $mod+shift+p exec kitty -T term_float ranger
-
 # calcurse
 bindsym $mod+shift+n exec kitty -T term_float calcurse
 
@@ -201,6 +198,18 @@ for_window [class="^Steam$" title="^Screenshot Uploader$"] floating enable
 for_window [class="^Steam$" title="^Steam Guard - Computer Authorization Required$"] floating enable
 for_window [title="^Steam Keyboard$"] floating enable
 
+# Floating apps
+for_window [class="^Gnome-calculator$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+# Setup scratchpad
+for_window [class="^Gnome-calculator$"] move window to scratchpad
+bindsym $mod+Shift+p [class="^Gnome-calculator$"] scratchpad show
+
+for_window [title="scratch_terminal"] move window to scratchpad
+bindsym $mod+Shift+t [title="scratch_terminal"] scratchpad show
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -215,11 +224,6 @@ bindsym $mod+Shift+u resize shrink height 30 px or 30 ppt
 bindsym $mod+Shift+i resize grow height 30 px or 30 ppt
 bindsym $mod+Shift+y resize shrink width 30 px or 30ppt
 bindsym $mod+Shift+o resize grow width 30 px or 30 ppt
-
-
-#proper floating
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
 
 set $title-bar-color                  #99ac4c
 set $title-bar-unfocused-color        #161719
@@ -282,6 +286,9 @@ smart_gaps on
 # Turn on compton
 exec --no-startup-id compton --xrender-sync-fence --dbus
 exec --no-startup-id Desktop-Bridge
+exec --no-startup-id gnome-calculator
+exec --no-startup-id exec kitty -T scratch_terminal
+
 exec --no-startup-id eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # Set wallpaper
 exec_always sh ~/.fehbg &
