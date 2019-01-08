@@ -37,15 +37,19 @@ cyan2     = #68b5ab
 white1    = #5c656e
 white2    = #b7bcba
 
+date   = #650091
+volume = #300045
+battery = #4A1C5E
+
 [bar/top]
 monitor = ${env:MONITOR:}
 width = 100%
-height = 22
+height = 30
 offset-x = 1%
 offset-y = 1%
 radius = 0.0
 fixed-center = true
-bottom = false
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -59,8 +63,9 @@ border-color = #00000000
 padding-left = 0
 padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
+
 
 font-0 = monospace:pixelsize=12;3
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -72,8 +77,8 @@ font-6 = Hack:pixelsize=22;5
 font-7 = Hack:pixelsize=10:weight=bold;2
 font-8 = monospace:pixelsize=10;3
 
-modules-left = i3
-modules-center =
+modules-left = 
+modules-center = i3
 modules-right = volume playerctl battery date
 
 tray-position =
@@ -302,37 +307,38 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = %A,%e %B
-date-alt = "%d/%m/%Y
+date=%A,%e %B
+date-alt="%d/%m/%Y
 
 time = %H:%M
 time-alt = %H:%M
 
 format-prefix = 
 ;format-prefix-foreground = ${colors.foreground-alt}
-;format-background = ${colors.red1}
+format-background = ${colors.date}
 ;format-underline = #0a6cf5
 
-label = " %date%  %time% "
+label = " %date% %time% "
 
 [module/volume]
 type = internal/volume
 
-format-volume = <ramp-volume> <bar-volume>
+format-volume = "<ramp-volume> <label-volume> "
+format-volume-background = ${colors.volume}
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
-label-volume-background = ${colors.background-alt}
+#label-volume-foreground = ${root.foreground}
+#label-volume-background = ${colors.volume}
 
 format-muted-prefix = " "
-#format-muted-background = ${colors.green1}
+format-muted-background = ${colors.volume}
 
-label-muted = 
+label-muted = " MUTED "
 
-ramp-volume-0 = 
+ramp-volume-0 = " "
 ;ramp-volume-0-background = ${colors.green1}
-ramp-volume-1 = 
+ramp-volume-1 = " "
 ;ramp-volume-1-background = ${colors.green1}
-ramp-volume-2 = 
+ramp-volume-2 = " "
 ;ramp-volume-2-background = ${colors.green1}
 
 bar-volume-width = 10
@@ -358,27 +364,31 @@ battery = BAT0
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+
+format-charging = "<animation-charging> <label-charging> "
+format-charging-background = ${colors.battery}
 ;format-charging-underline = #ffb52a
 
-format-discharging = <ramp-capacity>
+format-discharging = "<ramp-capacity> <label-discharging> "
+format-discharging-background = ${colors.battery}
 ;format-discharging-underline = ${self.format-charging-underline}
 
 format-full-prefix = " "
+format-full-background = #340035
 ;format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = " "
+ramp-capacity-1 = " "
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = " "
+animation-charging-1 = " "
+animation-charging-2 = " "
+animation-charging-3 = " "
+animation-charging-4 = " "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
