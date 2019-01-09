@@ -37,9 +37,9 @@ cyan2     = #68b5ab
 white1    = #5c656e
 white2    = #b7bcba
 
-date   = #650091
-volume = #300045
-battery = #4A1C5E
+date   = #f1650091
+volume = #f1300045
+battery = #f14A1C5E
 
 [bar/top]
 monitor = ${env:MONITOR:}
@@ -178,6 +178,12 @@ index-sort = true
 wrapping-scroll = false
 pin-workspaces = true
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-default = ●
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -186,23 +192,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = ●
+label-focused = %icon%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = ○
+label-unfocused = %icon%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = ◉
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = ◉
+label-urgent = %icon%
 label-urgent-foreground = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
