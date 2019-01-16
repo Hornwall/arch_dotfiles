@@ -208,6 +208,7 @@ for_window [class="^Gnome-calculator$"] move window to scratchpad
 bindsym $mod+Shift+p [class="^Gnome-calculator$"] scratchpad show
 
 for_window [title="scratch_terminal"] move window to scratchpad
+for_window [title="scratch_terminal"] border pixel 2
 bindsym $mod+Shift+t [title="scratch_terminal"] scratchpad show
 
 # reload the configuration file

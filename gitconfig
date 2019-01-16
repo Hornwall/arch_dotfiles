@@ -30,3 +30,5 @@
   rebase = true
 [core]
 	excludesfile = /home/hannes/.gitignore
+[fetch]
+	prune = true
