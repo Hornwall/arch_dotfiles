@@ -66,6 +66,13 @@ nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
+" FZF
+nnoremap <space>f :FilesMru<CR>
+nnoremap <space>F :Files<CR>
+nnoremap <space>t :Tags<CR>
+nnoremap <space>r :Rg<CR>
+nnoremap <space>c :Commits<CR>
+
 " Fix nvim split switching in tmux
 if has('nvim')
   nmap <bs> :<c-u>TmuxNavigateLeft<cr>

@@ -16,6 +16,8 @@ alias v=vim
 alias vl=vim_line
 alias x=exit
 alias e=exit
+alias :e=vim
+alias :q=exit
 
 alias ssh='TERM=xterm ssh'
 
