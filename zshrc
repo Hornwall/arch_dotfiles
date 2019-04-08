@@ -31,12 +31,16 @@ export SSH_ASKPASS="/usr/bin/ksshaskpass"
 
 export GOPATH="$HOME/code/go"
 
-export SSH_AUTH_SOCK=`ss -xl | grep -o '/run/user/1000/keyring/ssh'` 
-
 export WINEPREFIX=~/.wine32
 export WINEARCH=win32
 
 export BROWSER=firefox
+
+# Allow ssh-add to use kwallet
+#eval $(ssh-agent -s) > /dev/null
+#ssh-add </dev/null &> /dev/null
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 
 #rbenv
