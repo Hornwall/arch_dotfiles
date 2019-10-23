@@ -60,6 +60,7 @@ Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tweekmonster/fzf-filemru'
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
 
@@ -67,6 +68,10 @@ set nocompatible
 if has('autocmd')
   filetype indent plugin on
 endif
+
+" Slime
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers

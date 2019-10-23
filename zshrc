@@ -39,9 +39,13 @@ export BROWSER=firefox
 # Allow ssh-add to use kwallet
 #eval $(ssh-agent -s) > /dev/null
 #ssh-add </dev/null &> /dev/null
-export SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+#export SSH_ASKPASS=/usr/bin/ksshaskpass
+#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
 
 #rbenv
 eval "$(rbenv init -)"
