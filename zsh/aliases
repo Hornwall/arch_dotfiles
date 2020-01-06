@@ -41,7 +41,3 @@ alias sold_ruby_install="CC=/usr/bin/gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/
 
 alias kgp="kubectl get pods -n"
 alias kex="kubectl exec -it -n"
-
-alias rake="bundle exec rake"
-alias rails="bundle exec rails"
-alias rails="bundle exec rspec"
