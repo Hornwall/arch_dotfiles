@@ -101,6 +101,9 @@ let g:gutentags_ctags_executable_ruby = 'rtags'
 let g:ale_fixers = {
 \   'ruby': [
 \     'rubocop',
+\   ],
+\   'javascript': [
+\     'eslint'
 \   ]
 \ }
 

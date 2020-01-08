@@ -78,6 +78,17 @@ if has('nvim')
   nmap <bs> :<c-u>TmuxNavigateLeft<cr>
 endif
 
+" vim-tmux-navigator
+" fix netrw breaking <c-l>
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
+
+function! NetrwMapping()
+  nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<cr>
+endfunction
+
 " Ale
 map <Leader>f :ALEFix<CR>
 

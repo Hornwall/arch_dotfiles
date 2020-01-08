@@ -13,6 +13,7 @@ SAVEHIST=20000
 
 # PATH
 export PATH="$HOME/.bin:$PATH"
+export PATH="./bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
@@ -78,3 +79,4 @@ source '/opt/google-cloud-sdk/completion.zsh.inc'
 . $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/nvm/init-nvm.sh
