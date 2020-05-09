@@ -60,6 +60,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tweekmonster/fzf-filemru'
 Plug 'jpalardy/vim-slime'
+Plug 'neovim/nvim-lsp'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete-lsp'
+Plug 'wincent/pinnacle'
+
 
 call plug#end()
 
@@ -71,6 +76,63 @@ endif
 " Slime
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
+
+" LSP
+lua << END
+  require'nvim_lsp'.ocamlls.setup{}
+  require'nvim_lsp'.tsserver.setup{}
+  require'nvim_lsp'.vimls.setup{}
+  require'nvim_lsp'.cssls.setup{}
+  require'nvim_lsp'.solargraph.setup{}
+END
+
+function! s:ConfigureBuffer()
+    nnoremap <buffer> <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
+    nnoremap <buffer> <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+    nnoremap <buffer> <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+
+    if exists('+signcolumn')
+      setlocal signcolumn=yes
+    endif
+endfunction
+
+function! s:SetUpLspHighlights()
+
+  execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic,underline', 'ModeMsg')
+
+  execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('bold,italic,underline', 'Type')
+
+  execute 'highlight LspDiagnosticsHintSign ' . pinnacle#highlight({
+        \   'bg': pinnacle#extract_bg('ColorColumn'),
+        \   'fg': pinnacle#extract_fg('Type')
+        \ })
+
+  execute 'highlight LspDiagnosticsErrorSign ' . pinnacle#highlight({
+        \   'bg': pinnacle#extract_bg('ColorColumn'),
+        \   'fg': pinnacle#extract_fg('ErrorMsg')
+        \ })
+endfunction
+
+sign define LspDiagnosticsErrorSign text=✖
+sign define LspDiagnosticsWarningSign text=⚠
+sign define LspDiagnosticsInformationSign text=ℹ
+sign define LspDiagnosticsHintSign text=➤
+
+if has('autocmd')
+  augroup WincentLanguageClientAutocmds
+    autocmd!
+
+    if exists('*nvim_open_win')
+      " TODO: figure out how to detect lsp floating window...
+      " Can use floating window.
+      autocmd BufEnter __LanguageClient__ call s:Bind()
+    endif
+
+    autocmd FileType javascript,typescript,vim  call s:ConfigureBuffer()
+
+    autocmd ColorScheme * call s:SetUpLspHighlights()
+  augroup END
+endif
 
 " tpope/vim-fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete ' Delete fugitive buffers
