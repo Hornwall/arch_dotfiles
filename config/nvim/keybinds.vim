@@ -68,7 +68,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " FZF
 nnoremap <space>f :FilesMru<CR>
-nnoremap <space>F :Files<CR>
+nnoremap <C-P> :Files<CR>
 nnoremap <space>t :Tags<CR>
 nnoremap <space>r :Rg<CR>
 nnoremap <space>c :Commits<CR>
@@ -101,3 +101,6 @@ nnoremap <silent><expr> <c-w>] ':<c-u>vert wincmd ]<cr>'
 
 " deliMate
 inoremap <expr> <C-j> delimitMate#JumpAny()
+
+" gitmoji
+nmap <Leader>j "=system('gitmoji-selector')<C-M>P

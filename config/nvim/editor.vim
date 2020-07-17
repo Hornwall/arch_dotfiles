@@ -59,6 +59,8 @@ augroup vimrcEx
   autocmd BufRead,BufNewFile *.rs set filetype=rust
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
   autocmd BufRead,BufNewFile *.slim set filetype=slim
+  autocmd BufRead,BufNewFile *.js set filetype=javascript
+  autocmd BufRead,BufNewFile *.vue set filetype=vue
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell

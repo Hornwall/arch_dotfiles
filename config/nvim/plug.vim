@@ -4,7 +4,7 @@ runtime macros/matchit.vim
 
 " Define bundles via Github repos
 Plug 'danro/rename.vim'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 Plug 'nanki/treetop.vim'
 Plug 'timcharper/textile.vim'
 Plug 'tpope/vim-cucumber'
