@@ -1,3 +1,4 @@
 newsboat/cache.db
 newsboat/history.cmdline
 newsboat/history.search
+config/nvim/bundle/*

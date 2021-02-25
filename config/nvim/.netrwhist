@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/hannes'
-let g:netrw_dirhist_2='/home/hannes/.config'
-let g:netrw_dirhist_3='/home/hannes/.config/i3'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/hannes/.dotfiles/config/nvim'
+let g:netrw_dirhist_5='/home/hannes/.dotfiles/config'
+let g:netrw_dirhist_4='/home/hannes/.dotfiles'
+let g:netrw_dirhist_3='/home/hannes/.config/nvim/bundle/vim-visual-multi/doc'
+let g:netrw_dirhist_2='/home/hannes/.config/nvim/bundle/vim-visual-multi'
+let g:netrw_dirhist_1='/home/hannes/.config/nvim/bundle/vim-visual-multi/doc'
+let g:netrw_dirhist_0='/home/hannes/.config/nvim/bundle/vim-visual-multi'
+let g:netrw_dirhist_9='/home/hannes/.config/nvim/bundle'
+let g:netrw_dirhist_8='/home/hannes/.config/nvim'
+let g:netrw_dirhist_7='/home/hannes/.config/nvim.bak/bundle'
