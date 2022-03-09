@@ -1,5 +1,5 @@
 source $HOME/.zsh/completion
-source $HOME/.zsh/keybindings
+# source $HOME/.zsh/keybindings
 source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
 source $HOME/.zsh/work_aliases
@@ -33,9 +33,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 #
 
 export GOPATH="$HOME/code/go"
-
-export WINEPREFIX=~/.wine32
-export WINEARCH=win32
 
 export BROWSER=firefox
 

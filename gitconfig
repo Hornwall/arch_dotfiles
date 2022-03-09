@@ -12,6 +12,9 @@
 
 [merge]
   defaultToUpstream = true
+	tool = nvim
+	tool = nvim
+	tool = --replace-all
 
 [alias]
   ci = commit

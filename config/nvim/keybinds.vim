@@ -47,7 +47,8 @@ nnoremap <leader>cpc :PlugClean<CR>
 nmap <Leader>h :rightbelow split<CR> " Split window horizontal
 nmap <Leader>v :rightbelow vsplit<CR> " Split window vertically
 
-nnoremap <C-P> :Files<CR>
+nnoremap <C-P> <cmd>Telescope find_files<CR>
+nnoremap <C-S> <cmd>Telescope live_grep<CR>
 
 " vim-argwrap
 nnoremap <silent> <leader>w :ArgWrap<CR>
