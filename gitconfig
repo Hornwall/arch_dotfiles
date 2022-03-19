@@ -33,6 +33,6 @@
 [pull]
   rebase = true
 [core]
-	excludesfile = /home/hannes/.gitignore_global
+	excludesFile = ~/.gitignore
 [fetch]
 	prune = true
