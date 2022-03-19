@@ -34,6 +34,10 @@ alias grepr="bundle exec rake routes | grep"
 alias pbcopy='xclip'
 alias pbpaste='xclip -o'
 
+alias wp="webpack-dev-server --hot"
+alias rs="rails s"
+alias rc="rails c"
+
 
 alias old_ruby_install="cat ~/ruby2.x-openssl.patch | CC=/usr/bin/gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install -p"
 alias sold_ruby_install="CC=/usr/bin/gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig  rbenv install"

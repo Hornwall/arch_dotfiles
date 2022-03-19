@@ -1,8 +1,7 @@
 set nobackup
 set autoindent
 set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
+set noswapfile    " set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
@@ -11,26 +10,15 @@ set autowrite
 
 set lazyredraw
 
+set clipboard=unnamedplus " Use OS clipboard by default
 
-filetype plugin indent on
+" Numbers
+set relativenumber
+set numberwidth=5
 
-set scrolloff=3
+filetype plugin indent on " Load plugin and indent based on filetype
 
-set statusline=%10f       " Path to the file
-set statusline+=%=        " Switch to the right side
-set statusline+=%l        " Current line
-set statusline+=:%c       " Column number
-set statusline+=/         " Separator
-set statusline+=%L        " Total lines
-set statusline+=\         " Space
-set statusline+=[%{fugitive#head(7)}]
-
-set clipboard=unnamedplus
-set backspace=indent,eol,start
-
-
-" Syntax highlightning
-syntax on
+set scrolloff=3 " Start scrollign when three lines from edge
 
 " Bundler
 au BufNewFile,BufRead Gemfile set filetype=ruby
@@ -48,21 +36,19 @@ augroup vimrcEx
     \ if &ft != 'gitcommit' && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-
-  " Cucumber navigation commands
-  " autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-  " autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-
+  
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
   autocmd BufRead,BufNewFile *.rs set filetype=rust
   autocmd BufRead,BufNewFile *.coffee set filetype=coffee
   autocmd BufRead,BufNewFile *.slim set filetype=slim
-
+  autocmd BufRead,BufNewFile *.js set filetype=javascript
+  autocmd BufRead,BufNewFile *.vue set filetype=vue
+  
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
-
+  
   " Automatically wrap at 80 characters for Markdown
   autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 augroup END
@@ -79,14 +65,9 @@ set list listchars=tab:»·,trail:·
 set splitbelow
 set splitright
 
-" Numbers
-set relativenumber
-set numberwidth=5
-
 " Display current line in a different color
 set cursorline
 
 " Do not wrap and color column 80
 set nowrap
 set colorcolumn=80
-

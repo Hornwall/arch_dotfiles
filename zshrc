@@ -1,5 +1,5 @@
 source $HOME/.zsh/completion
-source $HOME/.zsh/keybindings
+# source $HOME/.zsh/keybindings
 source $HOME/.zsh/functions
 source $HOME/.zsh/aliases
 source $HOME/.zsh/work_aliases
@@ -24,6 +24,7 @@ export PATH="/home/hannes/.yarn/bin:$PATH"
 export PATH="/home/hannes/scripts/ruby:$PATH"
 export PATH="/home/hannes/scripts/shell:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
+export PATH=/home/hannes/.local/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"
 export SSH_ASKPASS="/usr/bin/ksshaskpass"
@@ -32,9 +33,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 #
 
 export GOPATH="$HOME/code/go"
-
-export WINEPREFIX=~/.wine32
-export WINEARCH=win32
 
 export BROWSER=firefox
 
