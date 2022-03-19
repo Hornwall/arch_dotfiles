@@ -17,4 +17,7 @@ nightfox.setup({
 })
 nightfox.load()
 
+require'nvim-tree'.setup {
+}
+
 require("bindings")
