@@ -21,6 +21,7 @@ export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/Applications/Android/sdk/platform-tools:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
 export PATH="/home/hannes/.yarn/bin:$PATH"
+export PATH="/home/hannes/.cargo/bin:$PATH"
 export PATH="/home/hannes/scripts/ruby:$PATH"
 export PATH="/home/hannes/scripts/shell:$PATH"
 export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
@@ -72,10 +73,6 @@ source '/opt/google-cloud-sdk/completion.zsh.inc'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-. $HOME/.asdf/asdf.sh
-
-. $HOME/.asdf/completions/asdf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source /usr/share/nvm/init-nvm.sh
