@@ -38,6 +38,9 @@ opt.colorcolumn = "80"
 -- Do not wrap and color column 80
 opt.wrap        = false
 
+-- Global status line
+opt.laststatus = 3
+
 local vimrc_ex_group = vim.api.nvim_create_augroup("vimrcEx", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "text",
