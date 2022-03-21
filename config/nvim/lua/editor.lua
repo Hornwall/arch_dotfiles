@@ -36,3 +36,25 @@ opt.cursorline = true
 
 -- Do not wrap and color column 80
 opt.wrap        = false
+
+local vimrc_ex_group = vim.api.nvim_create_augroup("vimrcEx", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "text",
+  group = vimrc_ex_group,
+  callback = function()
+    vim.schedule(function()
+      vim.bo.textwidth = 78
+    end)
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  group = vimrc_ex_group,
+  callback = function()
+    vim.schedule(function()
+      vim.wo.spell = true
+    end)
+  end,
+})
+
