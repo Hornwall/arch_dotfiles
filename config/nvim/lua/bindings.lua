@@ -28,3 +28,6 @@ map("n", "<leader>l", ":TestLast<CR>")
 
 -- vim-argwrap
 map("n", "<leader>w", ":ArgWrap<CR>")
+
+-- gitmoji
+map("n", "<leader>j", [[<Cmd> read !gitmoji-selector<CR>]])
