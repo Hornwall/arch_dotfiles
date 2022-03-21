@@ -19,3 +19,9 @@ map("n", "<C-n>", ":NvimTreeToggle<CR>", {silent = true})
 
 map("n", "<C-P>", "<cmd>Telescope find_files<CR>")
 map("n", "<C-S>", "<cmd>Telescope live_grep<CR>")
+
+-- vimtest
+map("n", "<leader>s", ":TestNearest<CR>")
+map("n", "<leader>t", ":TestFile<CR>")
+map("n", "<leader>a", ":TestSuite<CR>")
+map("n", "<leader>l", ":TestLast<CR>")

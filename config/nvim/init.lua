@@ -1,5 +1,6 @@
 require("plugins")
 require("editor")
+require("vim-test")
 
 local g = vim.g
 
