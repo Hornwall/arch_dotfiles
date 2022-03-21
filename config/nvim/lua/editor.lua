@@ -33,6 +33,7 @@ opt.splitright = true
 
 -- Display current line in a different color
 opt.cursorline = true
+opt.colorcolumn = "80"
 
 -- Do not wrap and color column 80
 opt.wrap        = false
