@@ -1,6 +1,8 @@
 require("plugins")
 require("editor")
 require("vim-test")
+require("plugins.configs.cmp")
+require("nvim-lsp")
 
 local g = vim.g
 
@@ -18,7 +20,7 @@ nightfox.setup({
 })
 nightfox.load()
 
-require'nvim-tree'.setup {
+require("nvim-tree").setup {
 }
 
 require("bindings")

@@ -26,6 +26,9 @@ map("n", "<leader>t", ":TestFile<CR>")
 map("n", "<leader>a", ":TestSuite<CR>")
 map("n", "<leader>l", ":TestLast<CR>")
 
+-- Git
+map("n", "<leader>gpr", [[<Cmd> Dispatch git p-r -p <CR>]])
+
 -- vim-argwrap
 map("n", "<leader>w", ":ArgWrap<CR>")
 
