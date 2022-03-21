@@ -25,3 +25,6 @@ map("n", "<leader>s", ":TestNearest<CR>")
 map("n", "<leader>t", ":TestFile<CR>")
 map("n", "<leader>a", ":TestSuite<CR>")
 map("n", "<leader>l", ":TestLast<CR>")
+
+-- vim-argwrap
+map("n", "<leader>w", ":ArgWrap<CR>")
