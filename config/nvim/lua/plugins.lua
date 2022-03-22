@@ -31,15 +31,13 @@ return packer.startup(function()
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-vsnip"
-
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      config = function() require("plugins.configs.nvimtree") end,
+    "kyazdani42/nvim-tree.lua",
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = [[require("plugins.configs.nvimtree")]],
   }
-
 
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
