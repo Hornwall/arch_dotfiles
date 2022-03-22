@@ -26,7 +26,12 @@ return packer.startup(function()
   use "williamboman/nvim-lsp-installer"
 
   -- CMP
-  use "hrsh7th/nvim-cmp"
+  use {
+    "hrsh7th/nvim-cmp",
+    config = function()
+      require("plugins.configs.cmp")
+    end,
+  }
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
@@ -36,7 +41,9 @@ return packer.startup(function()
     requires = {
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     },
-    config = [[require("plugins.configs.nvimtree")]],
+    config = function()
+      require("plugins.configs.nvimtree")
+    end,
   }
 
   use "L3MON4D3/LuaSnip"
