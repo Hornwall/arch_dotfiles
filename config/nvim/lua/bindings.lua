@@ -18,8 +18,6 @@ keymap.set("n", "<leader>t", "<cmd>TestFile<CR>")
 keymap.set("n", "<leader>a", "<cmd>TestSuite<CR>")
 keymap.set("n", "<leader>l", "<cmd>TestLast<CR>")
 
--- Git
-keymap.set("n", "<leader>gpr", "<Cmd> Dispatch git p-r -p <CR>")
 
 -- vim-argwrap
 keymap.set("n", "<leader>w", "<cmd>ArgWrap<CR>")

@@ -1,5 +1,6 @@
 require("plugins")
 require("editor")
+require("cheat-sheet")
 
 local g = vim.g
 
