@@ -7,7 +7,6 @@ opt.swapfile    = false -- set history=50
 opt.ruler       = true  -- show the cursor position all the time
 opt.showcmd     = true  -- display incomplete commands
 opt.incsearch   = true  -- do incremental searching
-opt.laststatus  = 2     -- Always display the status line
 opt.autowrite   = true
 opt.lazyredraw  = true
 

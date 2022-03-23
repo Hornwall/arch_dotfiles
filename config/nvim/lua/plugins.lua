@@ -48,4 +48,22 @@ return packer.startup(function()
 
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    config = function()
+      require "plugins.configs.treesitter"
+    end,
+    run = ":TSUpdate"
+  }
+  use {
+      "nvim-treesitter/nvim-treesitter-textobjects",
+      after = "nvim-treesitter",
+    }
 end)
