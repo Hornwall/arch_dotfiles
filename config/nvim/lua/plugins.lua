@@ -15,13 +15,25 @@ return packer.startup(function()
   use "tpope/vim-fugitive"
   use "tpope/vim-rails"
   use "tpope/vim-dispatch"
-  use "vim-test/vim-test"
   use "FooSoft/vim-argwrap"
   use "sheerun/vim-polyglot"
   use "godlygeek/tabular"
 
+  use { 
+    "vim-test/vim-test" ,
+    config = function()
+      require("plugins.configs.vim-test")
+    end,
+  }
+
+
   -- LSP
-  use "neovim/nvim-lspconfig"
+  use  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("plugins.configs.nvim-lsp")
+    end,
+  }
   use "onsails/lspkind-nvim"
   use "williamboman/nvim-lsp-installer"
 
