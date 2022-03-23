@@ -62,8 +62,11 @@ return packer.startup(function()
   use "saadparwaiz1/cmp_luasnip"
 
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    "nvim-lualine/lualine.nvim",
+    requires = {"kyazdani42/nvim-web-devicons", opt = true},
+    config = function()
+      require("plugins.configs.lualine")
+    end,
   }
 
   -- Treesitter
