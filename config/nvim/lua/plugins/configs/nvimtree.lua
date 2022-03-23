@@ -6,6 +6,7 @@ nvimtree.setup {
   view = {
     mappings = {
       list = {
+        { key = "-", action = "" },
       },
     },
   },

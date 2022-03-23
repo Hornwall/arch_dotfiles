@@ -7,7 +7,7 @@ keymap.set("n", "<leader>v", "<cmd>rightbelow vsplit<CR>")
 keymap.set("n", "<leader>cs", "<cmd>source $MYVIMRC<CR>")
 
 -- nvimtree
-keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", {silent = true})
+keymap.set("n", "-", "<cmd>NvimTreeToggle<CR>", {silent = true})
 
 keymap.set("n", "<C-P>", "<cmd>Telescope find_files<CR>")
 keymap.set("n", "<C-S>", "<cmd>Telescope live_grep<CR>")
