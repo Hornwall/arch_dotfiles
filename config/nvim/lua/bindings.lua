@@ -23,4 +23,4 @@ keymap.set("n", "<leader>l", "<cmd>TestLast<CR>")
 keymap.set("n", "<leader>w", "<cmd>ArgWrap<CR>")
 
 -- gitmoji
-keymap.set("n", "<leader>j", "<cmd> read !gitmoji-selector<CR>")
+keymap.set("n", "<leader>j", "<cmd>0r !gitmoji-selector<CR>")

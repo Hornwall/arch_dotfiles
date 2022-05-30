@@ -28,7 +28,6 @@ export PATH=/Developer/NVIDIA/CUDA-7.0/bin:$PATH
 export PATH=/home/hannes/.local/bin:$PATH
 export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH
 export APOEX_EMAIL="hannes.hornwall@apoex.se"
-export SSH_ASKPASS="/usr/bin/ksshaskpass"
 export ERL_AFLAGS="-kernel shell_history enabled"
 #export DOCKER_HOST=tcp://127.0.0.1:32768
 #
@@ -38,15 +37,19 @@ export GOPATH="$HOME/code/go"
 export BROWSER=firefox
 
 # Allow ssh-add to use kwallet
-#eval $(ssh-agent -s) > /dev/null
 #ssh-add </dev/null &> /dev/null
+#eval $(ssh-agent -s) > /dev/null
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 #export SSH_ASKPASS=/usr/bin/ksshaskpass
-#export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
+#if  ssh-add -l | grep -qv "$(ssh-keygen -lf ~/.ssh/id_rsa | awk '{print $2}')"; \
+#  then echo SSH_ASKPASS=/usr/bin/ksshaskpass ssh-add ~/.ssh/id_rsa < /dev/null > /dev/null;
+#fi
+
+#if [ -n "$DESKTOP_SESSION" ];then
+#    eval $(gnome-keyring-daemon --start)
+#    export SSH_AUTH_SOCK
+#fi
 
 #rbenv
 eval "$(rbenv init -)"

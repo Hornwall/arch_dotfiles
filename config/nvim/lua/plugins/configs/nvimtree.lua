@@ -10,6 +10,9 @@ nvimtree.setup {
       },
     },
   },
+  update_focused_file = {
+    enable = true,
+  },
   actions = {
     change_dir = {
       enable = true,

@@ -18,6 +18,7 @@ return packer.startup(function()
   use "FooSoft/vim-argwrap"
   use "sheerun/vim-polyglot"
   use "godlygeek/tabular"
+  use "mg979/vim-visual-multi"
 
   use { 
     "vim-test/vim-test" ,
