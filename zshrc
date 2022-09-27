@@ -36,6 +36,11 @@ export GOPATH="$HOME/code/go"
 
 export BROWSER=firefox
 
+export QT_DEVICE_PIXEL_RATIO=0
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_SCREEN_SCALE_FACTORS=1
+export QT_SCALE_FACTOR=1
+
 # Allow ssh-add to use kwallet
 #ssh-add </dev/null &> /dev/null
 #eval $(ssh-agent -s) > /dev/null

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  postgres:
+    container_name: postgres_14
+    environment:
+      - POSTGRES_PASSWORD=123hej
+    image: postgres:13
+    ports:
+      - 5432:5432/tcp
+    restart: unless-stopped
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql
+      - /var/lib/postgresql/data:/var/lib/postgresql/data
