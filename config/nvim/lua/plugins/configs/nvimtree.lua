@@ -1,8 +1,6 @@
 nvimtree = require("nvim-tree")
 
 nvimtree.setup {
-  auto_close = true,
-  hide_root_folder = true,
   view = {
     mappings = {
       list = {

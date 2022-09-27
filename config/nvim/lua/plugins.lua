@@ -15,10 +15,12 @@ return packer.startup(function()
   use "tpope/vim-fugitive"
   use "tpope/vim-rails"
   use "tpope/vim-dispatch"
+  use "leafgarland/typescript-vim"
   use "FooSoft/vim-argwrap"
   use "sheerun/vim-polyglot"
   use "godlygeek/tabular"
   use "mg979/vim-visual-multi"
+  use "AndrewRadev/deleft.vim"
 
   use { 
     "vim-test/vim-test" ,

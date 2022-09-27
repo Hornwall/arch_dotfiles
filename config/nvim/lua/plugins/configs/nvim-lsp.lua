@@ -12,6 +12,20 @@ function map_keys()
   vim.keymap.set("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", {buffer=0})
 end
 
+require("lspconfig").vuels.setup{
+  capabilities = capabilities,
+  on_attach = function()
+    map_keys()
+  end,
+} -- connect to solargraph
+
+require("lspconfig").tsserver.setup{
+  capabilities = capabilities,
+  on_attach = function()
+    map_keys()
+  end,
+} -- connect to solargraph
+
 require("lspconfig").solargraph.setup{
   capabilities = capabilities,
   on_attach = function()
