@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
     "ruby",
     "rust",
     "scss",
+    "typescript",
     "vue",
     "yaml",
   },
