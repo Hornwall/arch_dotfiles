@@ -1,7 +1,7 @@
 set fish_greeting
 
 set -x EDITOR "nvim"
-set -x CDPATH "~/code" "~/"
+set -gx CDPATH "~/code" "~/" "."
 
 function fish_prompt -d "Write out the prompt"
   set_color cyan
