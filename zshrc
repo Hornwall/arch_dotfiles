@@ -42,22 +42,10 @@ export QT_SCREEN_SCALE_FACTORS=1
 export QT_SCALE_FACTOR=1
 
 # Allow ssh-add to use kwallet
-#ssh-add </dev/null &> /dev/null
-#eval $(ssh-agent -s) > /dev/null
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-#export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
-#if  ssh-add -l | grep -qv "$(ssh-keygen -lf ~/.ssh/id_rsa | awk '{print $2}')"; \
-#  then echo SSH_ASKPASS=/usr/bin/ksshaskpass ssh-add ~/.ssh/id_rsa < /dev/null > /dev/null;
-#fi
-
-#if [ -n "$DESKTOP_SESSION" ];then
-#    eval $(gnome-keyring-daemon --start)
-#    export SSH_AUTH_SOCK
-#fi
-
-#rbenv
-eval "$(rbenv init -)"
+# ASDF
+. /opt/asdf-vm/asdf.sh
 
 # editor
 export EDITOR=/usr/bin/nvim
@@ -74,9 +62,11 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 export QT_DEVICE_PIXEL_RATIO=2
 
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=18"
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/share/nvm/init-nvm.sh
