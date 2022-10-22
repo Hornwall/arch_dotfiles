@@ -1,6 +1,5 @@
 alias vim=nvim
 alias mutt=neomutt
-alias git=hub
 alias g=git
 alias gp="git push"
 alias gl="git pull"
