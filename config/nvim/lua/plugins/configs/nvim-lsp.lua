@@ -12,7 +12,7 @@ function map_keys()
   vim.keymap.set("n", "<leader>tr", "<cmd>Telescope lsp_references<cr>", {buffer=0})
 end
 
-require("lspconfig").vuels.setup{
+require("lspconfig").volar.setup{
   capabilities = capabilities,
   on_attach = function()
     map_keys()

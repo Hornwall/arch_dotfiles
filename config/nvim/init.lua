@@ -8,14 +8,15 @@ g.mapleader = ","
 
 local nightfox = require("nightfox")
 nightfox.setup({
-  fox = "hybridfox",
-  transparent = true,
-  styles = {
-    comments = "italic",
-    keywords = "bold",
-    functions = "italic,bold"
+  options = {
+    transparent = true,
+    styles = {
+      comments = "italic",
+      keywords = "bold",
+      functions = "italic,bold"
+    }
   }
 })
-nightfox.load()
+vim.cmd("colorscheme hybridfox")
 
 require("bindings")

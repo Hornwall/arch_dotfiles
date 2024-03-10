@@ -5,7 +5,8 @@ services:
     container_name: postgres_14
     environment:
       - POSTGRES_PASSWORD=123hej
-    image: postgres:13
+        #image: postgres:13
+    image: ankane/pgvector
     ports:
       - 5432:5432/tcp
     restart: unless-stopped

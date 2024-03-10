@@ -3,6 +3,7 @@ alias mutt=neomutt
 alias g=git
 alias gp="git push"
 alias gl="git pull"
+alias gpr="gh pr create && gh pr view -w"
 alias gch="git checkout HEAD"
 alias grbi="git rebase -i"
 alias gco="git checkout"
